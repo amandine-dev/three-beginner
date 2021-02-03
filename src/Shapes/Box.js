@@ -7,6 +7,8 @@ function Box (){
   const [hovered, setHovered] = useState(false)
     const [active, setActive] = useState(false)
 
+
+  
     //faire tourner la boite sur y et x
     const meshRef = useRef()
     useFrame(() => {
