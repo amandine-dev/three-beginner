@@ -1,7 +1,6 @@
 import { useFrame } from 'react-three-fiber'
 import React, { useRef , useLoader } from 'react'
 import * as THREE from "three";
-import img from '../src/fond-texture-papier-espace-design_53876-42312.jpg'
 
 
 

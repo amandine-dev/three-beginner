@@ -1,11 +1,6 @@
 import React from 'react'
 import SceneOne from './Scenes/Scene-exemple1'
 import SceneTwo from './Scenes/SceneTwo'
-import { Button } from "../src/Styles/elements";
-
-
-
-
 import './App.css'
 
 
@@ -14,13 +9,11 @@ export default function App(){
     <div
     className="grid">
     <h1>React with ThreeJS</h1>
-    <h2>Start editing to see some magic happen!</h2>
+    <h2>Differents examples</h2>
     <div className="grid">
       <div>
       <div className="sceneOne">
-      <Button >
-        Scene One
-      </Button>
+      <h3>Scene One</h3>
       <SceneOne/>
       </div>
       </div>
@@ -31,8 +24,6 @@ export default function App(){
       <SceneTwo/>
       </div>
       </div>
-       
-     
     </div>
      
   </div>)

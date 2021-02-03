@@ -1,8 +1,8 @@
 import React from 'react'
 import { Canvas } from "react-three-fiber";
 import { OrbitControls, Stars} from "drei";
-import Sphere from '../../src/Sphere';
-import Box from '../../src/Box';
+import Sphere from '../Shapes/Sphere';
+import Box from '../Shapes/Box';
 
 function SceneOne(){
   return <Canvas>
