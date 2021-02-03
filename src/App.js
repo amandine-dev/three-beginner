@@ -9,6 +9,8 @@ import './App.css'
 
 
 export default function App(){
+  //First -get canvas component, empty box
+  //Ajout de OrbitControls from drei pour  
   return <Canvas>
     <OrbitControls/>
     <Stars/>

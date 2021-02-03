@@ -1,10 +1,37 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
+import { useSpring, a } from "react-spring"
+import { useFrame } from 'react-three-fiber'
+
+
 
 function Box (){
+  const [hovered, setHovered] = useState(false)
+    const [active, setActive] = useState(false)
+
+    //faire tourner la boite sur y et x
+    const meshRef = useRef()
+    useFrame(() => {
+    meshRef.current.rotation.x = meshRef.current.rotation.y += 0.03
+  })
+    
+
+  
     return (
-      <mesh position={[2, 0, 0.5]}>
-        <boxBufferGeometry attach = "geometry"/>
-        <meshLambertMaterial attach="material" color="yellow"/>
+      //mesh ==>  it's an element; an objet with mesh with is points connected to a surface
+      //boxBufferGeometry ==>  this is an object, no children. Property attachn declare 
+      //args pour la taille
+
+      <mesh ref={meshRef}
+        onPointerOver={() => setHovered(true)}
+        onPointerOut={() => setHovered(false)}
+        onClick={() => setActive(!active)}
+        scale={active? [2,2,2] : [1,1,1]}
+        position={[2, 1, 0.5]}
+        > 
+        <boxBufferGeometry 
+        attach = "geometry"
+        args= {[1,1,1]}/>
+        <meshLambertMaterial attach="material" color={hovered ? "lightgrey" : "pink"}/>
       </mesh>
     )
   }
