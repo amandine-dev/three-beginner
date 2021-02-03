@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import { useSpring, a } from "react-spring"
 import { useFrame } from 'react-three-fiber'
 
 
@@ -14,8 +13,6 @@ function Box (){
     meshRef.current.rotation.x = meshRef.current.rotation.y += 0.03
   })
     
-
-  
     return (
       //mesh ==>  it's an element; an objet with mesh with is points connected to a surface
       //boxBufferGeometry ==>  this is an object, no children. Property attachn declare 
@@ -28,9 +25,11 @@ function Box (){
         scale={active? [2,2,2] : [1,1,1]}
         position={[2, 1, 0.5]}
         > 
+        
         <boxBufferGeometry 
         attach = "geometry"
         args= {[1,1,1]}/>
+        
         <meshLambertMaterial attach="material" color={hovered ? "lightgrey" : "pink"}/>
       </mesh>
     )
