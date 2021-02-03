@@ -16,10 +16,31 @@ body,
   -ms-user-select: none;
   user-select: none;
   /* overflow: hidden; */
-  background: #272727;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
     segoe ui, arial, sans-serif;
+}
+
+
+.grid{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 20px;}
+
+.sceneOne{
+  margin: 10px;
+}
+
+h3{
+  color: white;
+  background-color: violet;
+}
+canvas{
+  border: solid 2px black ;
+  object-fit: contain;
+  background: #272727;
 }
