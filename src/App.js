@@ -17,25 +17,16 @@ export default function App(){
   return <Canvas>
     <fog attach="fog" args={["white", 0, 100]} />
 
-    <OrbitControls/>
 
     <Stars/>
 
     <ambientLight intensity={0.5}/>
     <spotLight position ={[10, 50, 10]} angle={0.5}/>
-    <RoundedBox
-  args={[1, 1, 1]} // Width, Height and Depth of the box
-  radius={0.05} // Border-Radius of the box
-  smoothness={4} // Optional, number of subdivisions
-  position={[1, 1, -3]}>
-  <meshPhongMaterial attach="material" color="#f3f3f3" wireframe />
-</RoundedBox>
+    
       <Box/>
       <Poly/>
-      <Suspense fallback={null}>
 
       <Sphere/>  
-      </Suspense> 
       <Suspense fallback={null}>
       <Plane/></Suspense>  
           

@@ -6,7 +6,7 @@ import { useLoader } from "react-three-fiber"
 function Plane() {
     
 
-    const [texture] = useLoader(TextureLoader, 'textures/grasslight-big.jpg');
+    const [texture] = useLoader(TextureLoader, '../Assets/shl-océan-fleuri.jpg');
 
     if (texture) {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
