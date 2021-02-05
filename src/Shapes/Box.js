@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { useFrame } from 'react-three-fiber'
+import { RoundedBox } from "drei";
 
 
 
@@ -7,8 +8,8 @@ function Box (){
   const [hovered, setHovered] = useState(false)
     const [active, setActive] = useState(false)
 
+    
 
-  
     //faire tourner la boite sur y et x
     const meshRef = useRef()
     useFrame(() => {
@@ -32,7 +33,15 @@ function Box (){
         attach = "geometry"
         args= {[1,1,1]}/>
         
-        <meshLambertMaterial attach="material" color={hovered ? "lightgrey" : "pink"}/>
+        <meshLambertMaterial attach="material" color={hovered ? "lightgreen" : "yellow"}/>
+        
+        <RoundedBox
+  args={[1, 1, 1]} // Width, Height and Depth of the box
+  radius={0.05} // Border-Radius of the box
+  smoothness={4} // Optional, number of subdivisions
+  position={[1, 1, -3]}>
+  <meshPhongMaterial attach="material" color="#f3f3f3" wireframe />
+</RoundedBox>
       </mesh>
     )
   }

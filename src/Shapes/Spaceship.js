@@ -5,9 +5,13 @@ import spaceship from '../Static/spaceship/scene.gltf'
 
 
 
-function Spaceship() {
-    const gltf = useLoader(GLTFLoader, spaceship)
-    return <primitive object={gltf.scene} position={[1, 1, 1]} />
-  }
+export function Spaceship() {
+  const loader = new GLTFLoader();
 
-  export default Spaceship 
+  loader.load( spaceship, function ( gltf ) {
+  
+    scene.add( gltf.scene );
+  
+  }, undefined, function ( error ) {
+  
+    console.error( error );
