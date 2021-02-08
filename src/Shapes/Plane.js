@@ -1,26 +1,17 @@
-import * as THREE from 'three';
-import { TextureLoader } from 'three/src/loaders/TextureLoader.js'
-import React  from "react";
-import { useLoader } from "react-three-fiber"
+
+import * as THREE from "three";
+import map from "../Assets/water.jpg";
+import React, { useMemo, useRef } from 'react'
+
 
 function Plane() {
     
-
-    const [texture] = useLoader(TextureLoader, '../Assets/shl-océan-fleuri.jpg');
-
-    if (texture) {
-        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-        texture.repeat.set(1500, 1500);
-        texture.anisotropy = 16;
-    }
+    const texture = useMemo(() => new THREE.TextureLoader().load(map), []);
 
     return (
-        <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
-            <planeBufferGeometry attach="geometry" args={[20, 20]} />
-            {texture &&
-                <meshPhongMaterial attach="material" map={texture} />
-            }
-
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
+            <planeBufferGeometry attach="geometry" args={[10, 10]} />
+            <meshPhongMaterial attach="material" map={texture}/>   
         </mesh>
     )
 }
